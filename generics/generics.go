@@ -1,5 +1,5 @@
 //write functions data structs and algorithms to handle types without defining the type.
-
+//please note, that when a generic type is used for the first time, every other time where the same generic function or struct are used, it must be of the same type. Thus using it for the first time defines the type!!!
 package main
 
 import "fmt"
