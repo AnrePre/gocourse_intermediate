@@ -7,4 +7,21 @@ import "fmt"
 
 func main() {
 	fmt.Println("Hello World!")
+
+	//closures
+	counter := closureFunc()
+	fmt.Println(counter())
+	fmt.Println(counter())
+	fmt.Println(counter())
+	fmt.Println(counter())
+
+}
+
+func closureFunc() func() int {
+	count := 0
+	return func() int {
+		count++
+		return count
+	}
+
 }
