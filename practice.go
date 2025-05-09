@@ -8,34 +8,69 @@ func main() {
 	fmt.Println(".\n.\n.\nWelcome to My Golang Revision Tool.")
 	fmt.Println("Last updated 05/09/2025")
 	//Intro
-	fmt.Println("Please select the chapter that you would like to revise")
-	fmt.Print("1. All\n2. Closures\n3. Recursion\n100. Exit\nYour answer: ")
-	var answer int
-	fmt.Scan(&answer)
+loop:
+	for {
+		fmt.Println("\n---\nPlease select the chapter that you would like to revisit")
+		fmt.Print("1. All\n2. Closures\n3. Recursion\n100. Exit\nYour answer: ")
+		var answer int
+		fmt.Scan(&answer)
 
-	//Switch over choices
-	switch answer {
-	case 1:
-		fmt.Println("Revising all of the chapters")
-	case 2:
-		//closures
-		fmt.Println("Revising Closures")
-		counter := closureFunc()
-		fmt.Println(counter())
-		fmt.Println(counter())
-		fmt.Println(counter())
-		fmt.Println(counter())
-	case 3:
-		//recursion
-		fmt.Println("Revising Recursion")
-		fmt.Println(recursionFunc(10))
-	case 4:
-		fmt.Println("Revising ")
-	default:
-		fmt.Println("Exit")
+		//Switch over choices
+		switch answer {
+		case 1:
+			fmt.Println("Revising all of the chapters")
+		case 2:
+			//closures
+			fmt.Println("---\nClosures")
+			fmt.Println("Definition: A closure in Go is a function that captures and uses variables from its surrounding scope, even after that scope has exited.")
+			printClosure := `
+			func main() {
+				counter := closureFunc()
+				fmt.Println(counter())
+				fmt.Println(counter())
+				fmt.Println(counter())
+				fmt.Println(counter())	
+			}
+
+			func closureFunc() func() int {
+				count := 0
+				return func() int {
+					count++
+					return count
+				}
+			}
+
+			Result:`
+			fmt.Println(printClosure)
+			counter := closureFunc()
+			fmt.Println(counter())
+			fmt.Println(counter())
+			fmt.Println(counter())
+			fmt.Println(counter())
+		case 3:
+			//recursion
+			fmt.Println("Recursion")
+			fmt.Println(recursionFunc(10))
+		case 4:
+			fmt.Println("Revising ")
+		default:
+			fmt.Println("Exit")
+			break loop
+		}
+		var input string
+		fmt.Print("Do you want to continue? (y/n): ")
+		fmt.Scanln(&input)
+
+		if input == "y" {
+			fmt.Println("Continuing...")
+		} else if input == "n" {
+			fmt.Println("Exiting...")
+			break // exit the loop
+		} else {
+			fmt.Println("Invalid input, please enter 'y' or 'n'")
+		}
 
 	}
-
 }
 
 // A closure in Go is used when you need to capture and use variables from an outer function within an inner function, often for things like callbacks, maintaining state, or managing resource cleanup.
