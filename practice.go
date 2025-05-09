@@ -11,15 +11,13 @@ func main() {
 loop:
 	for {
 		fmt.Println("\n---\nPlease select the chapter that you would like to revisit")
-		fmt.Print("1. All\n2. Closures\n3. Recursion\n100. Exit\nYour answer: ")
+		fmt.Print("1. Closures\n2. Recursion\n3. Pointers\nYour answer: ")
 		var answer int
 		fmt.Scan(&answer)
 
 		//Switch over choices
 		switch answer {
 		case 1:
-			fmt.Println("Revising all of the chapters")
-		case 2:
 			//closures
 			fmt.Println("---\nClosures")
 			fmt.Println("Definition: A closure in Go is a function that captures and uses variables from its surrounding scope, even after that scope has exited.")
@@ -47,7 +45,7 @@ loop:
 			fmt.Println(counter())
 			fmt.Println(counter())
 			fmt.Println(counter())
-		case 3:
+		case 2:
 			//recursion
 			fmt.Println("---\nRecursion")
 			fmt.Println("Recursion in Go is when a function calls itself to solve a problem by breaking it down into smaller sub-problems, usually with a base case to stop the calls.")
@@ -68,12 +66,19 @@ loop:
 			Result:`
 			fmt.Println(printRecursion)
 			fmt.Println(recursionFunc(10))
+		case 3:
+			//Pointers
+			fmt.Println("---\nPointers")
+			fmt.Println("Pointers in Go are variables that store the memory address of another variable, allowing functions to modify values directly.")
+
 		case 4:
 			fmt.Println("Revising ")
+
 		default:
 			fmt.Println("Exit")
 			break loop
 		}
+		//Check if user wants to run the program agian or exit.
 		var input string
 		fmt.Print("Do you want to continue? (y/n): ")
 		fmt.Scanln(&input)
@@ -90,7 +95,6 @@ loop:
 	}
 }
 
-// A closure in Go is used when you need to capture and use variables from an outer function within an inner function, often for things like callbacks, maintaining state, or managing resource cleanup.
 func closureFunc() func() int {
 	count := 0
 	return func() int {
