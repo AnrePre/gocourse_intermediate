@@ -5,22 +5,36 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello World!")
-
+	fmt.Println(".\n.\n.\nWelcome to My Golang Revision Tool.")
+	fmt.Println("Last updated 05/09/2025")
 	//Intro
-	fmt.Println("Welcome to Intermediate Go revision")
 	fmt.Println("Please select the chapter that you would like to revise")
-	fmt.Print("1. All\n2. Closures\n3. Recursion\n100. Exit\n")
+	fmt.Print("1. All\n2. Closures\n3. Recursion\n100. Exit\nYour answer: ")
+	var answer int
+	fmt.Scan(&answer)
 
-	//closures
-	counter := closureFunc()
-	fmt.Println(counter())
-	fmt.Println(counter())
-	fmt.Println(counter())
-	fmt.Println(counter())
+	//Switch over choices
+	switch answer {
+	case 1:
+		fmt.Println("Revising all of the chapters")
+	case 2:
+		//closures
+		fmt.Println("Revising Closures")
+		counter := closureFunc()
+		fmt.Println(counter())
+		fmt.Println(counter())
+		fmt.Println(counter())
+		fmt.Println(counter())
+	case 3:
+		//recursion
+		fmt.Println("Revising Recursion")
+		fmt.Println(recursionFunc(10))
+	case 4:
+		fmt.Println("Revising ")
+	default:
+		fmt.Println("Exit")
 
-	//recursion
-	fmt.Println(recursionFunc(10))
+	}
 
 }
 
