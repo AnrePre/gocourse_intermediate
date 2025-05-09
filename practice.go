@@ -49,7 +49,24 @@ loop:
 			fmt.Println(counter())
 		case 3:
 			//recursion
-			fmt.Println("Recursion")
+			fmt.Println("---\nRecursion")
+			fmt.Println("Recursion in Go is when a function calls itself to solve a problem by breaking it down into smaller sub-problems, usually with a base case to stop the calls.")
+			printRecursion := `
+			// Recursion function of n + (n-1)
+
+			func main() {
+				fmtPrintln(recursionFunc(10))
+			}
+
+			func recursionFunc(n int) int {
+				if n < 1 {
+					return n
+				}
+				return n + recursionFunc(n-1)
+			}
+
+			Result:`
+			fmt.Println(printRecursion)
 			fmt.Println(recursionFunc(10))
 		case 4:
 			fmt.Println("Revising ")
