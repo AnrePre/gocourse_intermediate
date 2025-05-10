@@ -1,8 +1,8 @@
-package main
+package formattingVerbsPackage
 
 import "fmt"
 
-func main() {
+func formattingVerbsPackage() {
 
 	// --- General Formatting Verbs
 	// %v	Prints the value in the default format

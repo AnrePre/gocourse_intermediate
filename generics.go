@@ -1,6 +1,6 @@
-//write functions data structs and algorithms to handle types without defining the type.
-//please note, that when a generic type is used for the first time, every other time where the same generic function or struct are used, it must be of the same type. Thus using it for the first time defines the type!!!
-package main
+// write functions data structs and algorithms to handle types without defining the type.
+// please note, that when a generic type is used for the first time, every other time where the same generic function or struct are used, it must be of the same type. Thus using it for the first time defines the type!!!
+package genericsPackage
 
 import "fmt"
 
@@ -16,8 +16,8 @@ func (s *Stack[T]) push(element T) {
 	s.elements = append(s.elements, element)
 }
 
-func (s *Stack[T]) pop()(T, bool) {
-	if len(s.elements) == 0{
+func (s *Stack[T]) pop() (T, bool) {
+	if len(s.elements) == 0 {
 		var zero T
 		return zero, false
 	}
@@ -26,11 +26,9 @@ func (s *Stack[T]) pop()(T, bool) {
 	return element, true
 }
 
-
 func (s *Stack[T]) isEmpty() bool {
 	return len(s.elements) == 0
 }
-
 
 func (s Stack[T]) printAll() {
 	if len(s.elements) == 0 {
@@ -44,16 +42,11 @@ func (s Stack[T]) printAll() {
 	fmt.Println("")
 }
 
-
-
-
-
-
-func main() {
+func genericsPackage() {
 	x, y := 1, 2
 	x, y = swap(x, y)
 	fmt.Println(x, y)
-	
+
 	x1, y1 := "jane", "john"
 	x1, y1 = swap(x1, y1)
 	fmt.Println(x1, y1)
@@ -66,6 +59,3 @@ func main() {
 	fmt.Println(intStack.pop())
 	intStack.printAll()
 }
-
-
-

@@ -1,8 +1,8 @@
-package main
+package fmtPackage
 
 import "fmt"
 
-func main() {
+func fmtPackage() {
 
 	// Printing Functions
 	// fmt.Print("Hello ")

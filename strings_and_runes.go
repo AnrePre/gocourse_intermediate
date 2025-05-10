@@ -1,11 +1,11 @@
-package main
+package stringsAndRunesPackage
 
 import (
 	"fmt"
 	"unicode/utf8"
 )
 
-func main() {
+func stringsAndRunesPackages() {
 
 	message := "Hello, \nGo!"
 	message1 := "Hello, \tGo!"
